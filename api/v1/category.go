@@ -1,11 +1,13 @@
 package v1
 
 import (
+	"fmt"
+	"net/http"
+	"strconv"
+
 	"github.com/gin-gonic/gin"
 	"github.com/wejectchen/ginblog/model"
 	"github.com/wejectchen/ginblog/utils/errmsg"
-	"net/http"
-	"strconv"
 )
 
 // AddCategory 添加分类
@@ -44,6 +46,7 @@ func GetCateInfo(c *gin.Context) {
 
 // GetCate 查询分类列表
 func GetCate(c *gin.Context) {
+	fmt.Println("qwerqwerqwerqwerqwe------>")
 	pageSize, _ := strconv.Atoi(c.Query("pagesize"))
 	pageNum, _ := strconv.Atoi(c.Query("pagenum"))
 
@@ -57,9 +60,10 @@ func GetCate(c *gin.Context) {
 	if pageNum == 0 {
 		pageNum = 1
 	}
-
+	
 	data, total := model.GetCate(pageSize, pageNum)
 	code := errmsg.SUCCSE
+	fmt.Println("---->",data)
 	c.JSON(
 		http.StatusOK, gin.H{
 			"status":  code,

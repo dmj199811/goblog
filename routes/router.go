@@ -1,9 +1,11 @@
 package routes
 
 import (
+	"fmt"
+
 	"github.com/gin-contrib/multitemplate"
 	"github.com/gin-gonic/gin"
-	"github.com/wejectchen/ginblog/api/v1"
+	v1 "github.com/wejectchen/ginblog/api/v1"
 	"github.com/wejectchen/ginblog/middleware"
 	"github.com/wejectchen/ginblog/utils"
 )
@@ -107,6 +109,7 @@ func InitRouter() {
 		router.GET("commentcount/:id", v1.GetCommentCount)
 	}
 
+	fmt.Println("123412341234-0--->")
 	_ = r.Run(utils.HttpPort)
 
 }

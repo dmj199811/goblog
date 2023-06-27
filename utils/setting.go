@@ -2,6 +2,7 @@ package utils
 
 import (
 	"fmt"
+
 	"gopkg.in/ini.v1"
 )
 
@@ -28,6 +29,7 @@ func init() {
 	if err != nil {
 		fmt.Println("配置文件读取错误，请检查文件路径:", err)
 	}
+	fmt.Println(file,"======>")
 	LoadServer(file)
 	LoadData(file)
 	LoadQiniu(file)
