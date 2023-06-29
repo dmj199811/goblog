@@ -4,24 +4,19 @@
       <a-form-model ref="loginFormRef" :rules="rules" :model="formdata" class="loginForm">
         <a-form-model-item prop="username">
           <a-input v-model="formdata.username" placeholder="请输入用户名">
-            <a-icon slot="prefix" type="user" style="color:rgba(0,0,0,.25)" />
+            <a-icon slot="prefix" type="user" style="color: rgba(0, 0, 0, 0.25)" />
           </a-input>
         </a-form-model-item>
 
         <a-form-model-item prop="password">
-          <a-input
-            v-model="formdata.password"
-            placeholder="请输入密码"
-            type="password"
-            v-on:keyup.enter="login"
-          >
-            <a-icon slot="prefix" type="lock" style="color:rgba(0,0,0,.25)" />
+          <a-input v-model="formdata.password" placeholder="请输入密码" type="password" v-on:keyup.enter="login">
+            <a-icon slot="prefix" type="lock" style="color: rgba(0, 0, 0, 0.25)" />
           </a-input>
         </a-form-model-item>
 
         <a-form-model-item class="loginBtn">
-          <a-button type="primary" style="margin:10px" @click="login">登录</a-button>
-          <a-button type="info" style="margin:10px" @click="resetForm">取消</a-button>
+          <a-button type="primary" style="margin: 10px" @click="login">登录</a-button>
+          <a-button type="info" style="margin: 10px" @click="resetForm">取消</a-button>
         </a-form-model-item>
       </a-form-model>
     </div>
@@ -87,7 +82,7 @@ export default {
   background-color: #fff;
   position: absolute;
   top: 50%;
-  left: 70%;
+  left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 9px;
 }
